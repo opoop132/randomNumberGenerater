@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Generate a random number between any two numbers. Useful for games, lotteries, and fun decisions.">
+  <title>Random Number Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      text-align: center;
+    }
+    input {
+      padding: 10px;
+      margin: 5px;
+      width: 80px;
+    }
+    button {
+      padding: 10px 20px;
+      margin-top: 10px;
+    }
+    .result {
+      font-size: 32px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    .ad {
+      margin: 30px 0;
+      border: 1px dashed #ccc;
+      height: 90px;
+      line-height: 90px;
+      color: #888;
+    }
+  </style>
+  <!-- AdSense script here when live -->
+  <!--
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  -->
+</head>
+<body>
+
+  <h1>🎲 Random Number Generator</h1>
+  <p>Enter a range and get a random number instantly.</p>
+
+  <div class="ad">[Ad Placeholder A]</div>
+
+  <input type="number" id="min" placeholder="Min" value="1">
+  <input type="number" id="max" placeholder="Max" value="100">
+  <br>
+  <button onclick="generate()">Generate</button>
+
+  <div class="result" id="result">?</div>
+
+  <div class="ad">[Ad Placeholder B]</div>
+  <div class="ad">[Ad Placeholder C]</div>
+
+  <script>
+    function generate() {
+      const min = parseInt(document.getElementById("min").value);
+      const max = parseInt(document.getElementById("max").value);
+      if (isNaN(min) || isNaN(max) || min > max) {
+        document.getElementById("result").innerText = "Invalid range!";
+        return;
+      }
+      const num = Math.floor(Math.random() * (max - min + 1)) + min;
+      document.getElementById("result").innerText = num;
+    }
+  </script>
+
+</body>
+</html>
