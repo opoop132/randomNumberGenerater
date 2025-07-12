@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://glittering-truffle-53e610.netlify.app/sitemap.xml
