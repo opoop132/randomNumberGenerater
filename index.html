@@ -1,124 +1,159 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Random Number Generatorr</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Free online tool to decode Base64 strings instantly. Fast, secure, and easy to use." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="A fast and simple tool to generate random numbers online." />
+  <title>Random Number Generator</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom right, #f9f9f9, #e0e0e0);
-      color: #333;
-      max-width: 800px;
-      margin: auto;
-      padding: 40px 20px;
-      line-height: 1.6;
+      background-color: #e6f2ff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
     }
-    h1 {
+    header, footer {
       text-align: center;
-      color: #2c3e50;
+      padding: 16px;
     }
-    textarea {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      margin-bottom: 20px;
-      font-size: 15px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      resize: vertical;
+    main {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-    button {
-      padding: 12px 24px;
-      background-color: #0077cc;
-      color: white;
-      font-size: 16px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
+    input {
+      padding: 8px;
     }
-    button:hover {
-      background-color: #005fa3;
+    
+button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(to right, #007bff, #00c6ff);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+    section {
+      margin-top: 40px;
     }
-    .output {
-      background-color: #f3f3f3;
-      border: 1px solid #ccc;
-      padding: 12px;
-      white-space: pre-wrap;
-      border-radius: 6px;
-      margin-top: 10px;
+    ul {
+      list-style: none;
+      padding: 0;
     }
-    footer {
-      margin-top: 60px;
-      font-size: 0.9em;
-      opacity: 0.7;
-      text-align: center;
+    ul li {
+      margin: 4px 0;
     }
   </style>
-<link rel="icon" href="favicon.png" type="image/png">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Random Number Generator",
-  "url": "https://glittering-truffle-53e610.netlify.app/",
-  "description": "A fast and simple tool to generate random numbers online, instantly and securely.",
-  "inLanguage": "en",
-  "license": "https://opensource.org/licenses/MIT"
-}
-</script>
-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Random Number Generator",
+    "url": "https://glittering-truffle-53e610.netlify.app/",
+    "description": "A fast and simple tool to generate random numbers online, instantly and securely.",
+    "inLanguage": "en",
+    "license": "https://opensource.org/licenses/MIT"
+  }
+  </script>
 </head>
-<body style="background-color: #e6f2ff;">
+<body>
+  <main>
+    <h1 style="text-align: center;">🎲 Random Number Generator</h1>
+    <p style="text-align: center;">Generate a random number in the range you define below.</p>
 
-  <h1>🔓 Random Number Generatorr</h1>
-  <p>Paste your Base64 encoded text below and click "Decode" to view the original string.</p>
+    <div style="margin-top: 40px;">
+      <label for="min">Min:</label>
+      <input id="min" type="number" value="1" style="margin-right: 20px;" />
+      <label for="max">Max:</label>
+      <input id="max" type="number" value="100" />
+      <button onclick="generate()" style="margin-left: 20px;">Generate</button>
+    </div>
 
-  <textarea id="input" rows="6" placeholder="Example: SGVsbG8gd29ybGQh"></textarea>
-  <button onclick="decodeBase64()">Decode</button>
+    <div id="result" style="margin-top: 30px; font-size: 24px; font-weight: bold;"></div>
 
-  <h3>Result:</h3>
-  <div id="output" class="output">Your decoded text will appear here...</div>
-
-  
-  
-  
-  <section style="margin-top: 60px;">
-    <h2>About</h2>
-    <p>
-      Welcome to the Random Number Generator – a simple, fast, and secure tool for generating random numbers instantly.
-      This tool is useful for lottery simulations, games, random selections, or whenever you need a quick random number.
-    </p>
-    <p>
-      All numbers are generated using JavaScript in your browser, meaning nothing is stored or shared externally.
-      It’s completely free and doesn’t require any installation.
-    </p>
-  </section>
-
-
-  
-  <section style="margin-top: 60px;">
-    <h2>Other Tools</h2>
+    
+<section>
+  <h2>About</h2>
+  <p>
+    Welcome to the Random Number Generator – a fast, lightweight, and easy-to-use tool designed to generate random numbers instantly in your browser.
+    Whether you're a developer needing test data, a teacher creating random quiz questions, a game developer assigning loot drops, or someone simply looking
+    for help with a lottery draw or team shuffle, this tool serves a broad range of use cases with no setup required.
+  </p>
+  <p>
+    <strong>How it works:</strong><br/>
+    This tool uses the built-in JavaScript <code>Math.random()</code> function to generate a floating-point number between 0 and 1,
+    then scales it to your chosen range using the formula:
+  </p>
+  <pre>Math.floor(Math.random() * (max - min + 1)) + min;</pre>
+  <p>
+    This ensures an even distribution across your specified range, producing a new integer on every click. All operations happen client-side,
+    meaning your input data and generated numbers never leave your device — enhancing both speed and privacy.
+  </p>
+  <p>
+    <strong>Use cases include:</strong>
     <ul>
-      <li><a href="https://glittering-truffle-53e610.netlify.app/">Random Number Generator</a></li>
-      <li><a href="https://age-calculator-global.netlify.app/">Age Calculator</a></li>
-      <li><a href="https://base64-encoder-decoder-global.netlify.app/">Base64 Encoder Decoder</a></li>
-      <li><a href="https://bmi-calculator-global.netlify.app/">Bmi Calculator</a></li>
-      <li><a href="https://typing-speed-test-global.netlify.app/">Typing Speed Test</a></li>
+      <li>🎲 Rolling a virtual die or lottery draw</li>
+      <li>🎯 Picking a random winner from a contest</li>
+      <li>🧪 Creating random test values in software development</li>
+      <li>📝 Shuffling students or teams for educational activities</li>
+      <li>🎮 Generating random stats or outcomes in a game</li>
     </ul>
-  </section>
+  </p>
+  <p>
+    Completely free and designed with a mobile-friendly interface, this tool works on all modern browsers and platforms.
+  </p>
+</section>
 
-  <footer style="margin-top: 60px; font-size: 0.9em; opacity: 0.7; text-align: center;">
-    <p>
-      <a href="privacy.html">Privacy policy</a> |
-      <a href="about.html">About us</a> |
-      <a href="contact.html">Contact</a>
-    </p>
-    <p>This website uses cookies. We use cookies to personalise content/ads and to analyse our traffic.</p>
-    <p>&copy; 2025 Random Number Generator Tool</p>
-  </footer>
 
+    <section style="margin-top: 60px;">
+      <h2>Other Tools</h2>
+      <ul>
+        <li><a href="https://glittering-truffle-53e610.netlify.app/">Random Number Generator</a></li>
+        <li><a href="https://age-calculator-global.netlify.app/">Age Calculator</a></li>
+        <li><a href="https://base64-encoder-decoder-global.netlify.app/">Base64 Encoder Decoder</a></li>
+        <li><a href="https://bmi-calculator-global.netlify.app/">Bmi Calculator</a></li>
+        <li><a href="https://typing-speed-test-global.netlify.app/">Typing Speed Test</a></li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>
+        <a href="privacy.html">Privacy policy</a> |
+        <a href="about.html">About us</a> |
+        <a href="contact.html">Contact</a>
+      </p>
+      <p>This website uses cookies. We use cookies to personalise content/ads and to analyse our traffic.</p>
+      <p>&copy; 2025 Random Number Generator Tool</p>
+      <p style="text-align:center; font-size: 0.9rem; margin-top: 24px; opacity: 0.7;">
+        This tool is free. If you find it useful, you can <a href="https://www.buymeacoffee.com/opoop132" target="_blank">buy me a coffee ☕</a>.
+      </p>
+    </footer>
+  </main>
+
+  <script>
+    function generate() {
+      const min = parseInt(document.getElementById('min').value);
+      const max = parseInt(document.getElementById('max').value);
+      if (isNaN(min) || isNaN(max) || min > max) {
+        document.getElementById('result').innerText = 'Invalid range.';
+        return;
+      }
+      const rand = Math.floor(Math.random() * (max - min + 1)) + min;
+      document.getElementById('result').innerText = '🎯 Result: ' + rand;
+    }
+  </script>
 </body>
 </html>
