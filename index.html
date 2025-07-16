@@ -1,74 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Generate a random number between any two numbers. Useful for games, lotteries, and fun decisions.">
-  <title>Random Number Generator</title>
-
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6443541493309841"
-     crossorigin="anonymous"></script>
-
+  <meta charset="UTF-8" />
+  <title>Random Number Generatorr</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Free online tool to decode Base64 strings instantly. Fast, secure, and easy to use." />
   <style>
     body {
-      font-family: Arial, sans-serif;
-      max-width: 600px;
-      margin: 40px auto;
-      padding: 20px;
-      text-align: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #f9f9f9, #e0e0e0);
+      color: #333;
+      max-width: 800px;
+      margin: auto;
+      padding: 40px 20px;
+      line-height: 1.6;
     }
-    input {
-      padding: 10px;
-      margin: 5px;
-      width: 80px;
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      resize: vertical;
     }
     button {
-      padding: 10px 20px;
+      padding: 12px 24px;
+      background-color: #0077cc;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+    .output {
+      background-color: #f3f3f3;
+      border: 1px solid #ccc;
+      padding: 12px;
+      white-space: pre-wrap;
+      border-radius: 6px;
       margin-top: 10px;
     }
-    .result {
-      font-size: 32px;
-      font-weight: bold;
-      margin-top: 20px;
-    }
-    .ad {
-      margin: 30px 0;
-      border: 1px dashed #ccc;
-      height: 90px;
-      line-height: 90px;
-      color: #888;
+    footer {
+      margin-top: 60px;
+      font-size: 0.9em;
+      opacity: 0.7;
+      text-align: center;
     }
   </style>
 </head>
 <body>
 
-  <h1>🎲 Random Number Generator</h1>
-  <p>Enter a range and get a random number instantly.</p>
+  <h1>🔓 Random Number Generatorr</h1>
+  <p>Paste your Base64 encoded text below and click "Decode" to view the original string.</p>
 
-  <div class="ad">[Ad Placeholder A]</div>
+  <textarea id="input" rows="6" placeholder="Example: SGVsbG8gd29ybGQh"></textarea>
+  <button onclick="decodeBase64()">Decode</button>
 
-  <input type="number" id="min" placeholder="Min" value="1">
-  <input type="number" id="max" placeholder="Max" value="100">
-  <br>
-  <button onclick="generate()">Generate</button>
+  <h3>Result:</h3>
+  <div id="output" class="output">Your decoded text will appear here...</div>
 
-  <div class="result" id="result">?</div>
+  
+  
+  
+  <section style="margin-top: 60px;">
+    <h2>About</h2>
+    <p>
+      Welcome to the Random Number Generator – a simple, fast, and secure tool for generating random numbers instantly.
+      This tool is useful for lottery simulations, games, random selections, or whenever you need a quick random number.
+    </p>
+    <p>
+      All numbers are generated using JavaScript in your browser, meaning nothing is stored or shared externally.
+      It’s completely free and doesn’t require any installation.
+    </p>
+  </section>
 
-  <div class="ad">[Ad Placeholder B]</div>
-  <div class="ad">[Ad Placeholder C]</div>
 
-  <script>
-    function generate() {
-      const min = parseInt(document.getElementById("min").value);
-      const max = parseInt(document.getElementById("max").value);
-      if (isNaN(min) || isNaN(max) || min > max) {
-        document.getElementById("result").innerText = "Invalid range!";
-        return;
-      }
-      const num = Math.floor(Math.random() * (max - min + 1)) + min;
-      document.getElementById("result").innerText = num;
-    }
-  </script>
+  
+  <section style="margin-top: 60px;">
+    <h2>Other Tools</h2>
+    <ul>
+      <li><a href="https://glittering-truffle-53e610.netlify.app/">Random Number Generator</a></li>
+      <li><a href="https://random-word-picker.netlify.app/">Random Word Picker</a></li>
+      <li><a href="https://text-case-converter.netlify.app/">Text Case Converter</a></li>
+      <li><a href="https://qr-code-maker-123.netlify.app/">QR Code Generator</a></li>
+      <li><a href="https://typing-speed-tester.netlify.app/">Typing Speed Test</a></li>
+    </ul>
+  </section>
+
+  <footer style="margin-top: 60px; font-size: 0.9em; opacity: 0.7; text-align: center;">
+    <p>
+      <a href="privacy.html">Privacy policy</a> |
+      <a href="about.html">About us</a> |
+      <a href="contact.html">Contact</a>
+    </p>
+    <p>This website uses cookies. We use cookies to personalise content/ads and to analyse our traffic.</p>
+    <p>&copy; 2025 Random Number Generator Tool</p>
+  </footer>
 
 </body>
 </html>
